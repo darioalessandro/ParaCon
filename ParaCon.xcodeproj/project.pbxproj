@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		064D443F1BC064190054DD0E /* ImageTransferOp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064D443E1BC064190054DD0E /* ImageTransferOp.swift */; settings = {ASSET_TAGS = (); }; };
 		064D44411BC0682F0054DD0E /* jocker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 064D44401BC0682F0054DD0E /* jocker.jpg */; settings = {ASSET_TAGS = (); }; };
+		064D44561BC087C10054DD0E /* NSStreamConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064D44551BC087C10054DD0E /* NSStreamConsumer.swift */; settings = {ASSET_TAGS = (); }; };
 		065AD9541BC02C2A00C1599E /* ParaCon.h in Headers */ = {isa = PBXBuildFile; fileRef = 065AD9531BC02C2A00C1599E /* ParaCon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		065AD95B1BC02C2B00C1599E /* ParaCon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 065AD9501BC02C2A00C1599E /* ParaCon.framework */; settings = {ASSET_TAGS = (); }; };
 		065AD9601BC02C2B00C1599E /* ParaConTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AD95F1BC02C2B00C1599E /* ParaConTests.swift */; };
-		065AD96B1BC02C4E00C1599E /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AD96A1BC02C4E00C1599E /* ConcurrentOperation.swift */; settings = {ASSET_TAGS = (); }; };
+		065AD96B1BC02C4E00C1599E /* PCConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AD96A1BC02C4E00C1599E /* PCConcurrentOperation.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +29,14 @@
 /* Begin PBXFileReference section */
 		064D443E1BC064190054DD0E /* ImageTransferOp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransferOp.swift; sourceTree = "<group>"; };
 		064D44401BC0682F0054DD0E /* jocker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jocker.jpg; sourceTree = "<group>"; };
+		064D44551BC087C10054DD0E /* NSStreamConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStreamConsumer.swift; sourceTree = "<group>"; };
 		065AD9501BC02C2A00C1599E /* ParaCon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParaCon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		065AD9531BC02C2A00C1599E /* ParaCon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParaCon.h; sourceTree = "<group>"; };
 		065AD9551BC02C2A00C1599E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		065AD95A1BC02C2B00C1599E /* ParaConTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParaConTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		065AD95F1BC02C2B00C1599E /* ParaConTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaConTests.swift; sourceTree = "<group>"; };
 		065AD9611BC02C2B00C1599E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		065AD96A1BC02C4E00C1599E /* ConcurrentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
+		065AD96A1BC02C4E00C1599E /* PCConcurrentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCConcurrentOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,8 @@
 			children = (
 				065AD9531BC02C2A00C1599E /* ParaCon.h */,
 				065AD9551BC02C2A00C1599E /* Info.plist */,
-				065AD96A1BC02C4E00C1599E /* ConcurrentOperation.swift */,
+				065AD96A1BC02C4E00C1599E /* PCConcurrentOperation.swift */,
+				064D44551BC087C10054DD0E /* NSStreamConsumer.swift */,
 			);
 			path = ParaCon;
 			sourceTree = "<group>";
@@ -204,7 +207,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065AD96B1BC02C4E00C1599E /* ConcurrentOperation.swift in Sources */,
+				064D44561BC087C10054DD0E /* NSStreamConsumer.swift in Sources */,
+				065AD96B1BC02C4E00C1599E /* PCConcurrentOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
