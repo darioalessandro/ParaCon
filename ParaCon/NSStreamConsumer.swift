@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class NSStreamConsumer<A> : PCConcurrentOperation, NSStreamDelegate {
+public class NSStreamConsumer : PCConcurrentOperation, NSStreamDelegate {
     
     private let stream : NSStream
     
@@ -18,6 +18,16 @@ public class NSStreamConsumer<A> : PCConcurrentOperation, NSStreamDelegate {
         self.stream = stream
         self.foundElement = foundElement
         super.init()
+    }
+    
+    public func write(data : NSData) -> Int {
+        let output = self.stream as! NSOutputStream
+        let ptr = UnsafePointer<UInt8>(data.bytes)
+        var i = 0;
+        while(i < data.length && _isExecuting && !_isFinished) {
+            i = i + output.write(ptr, maxLength: data.length)
+        }
+        return i
     }
     
     override public func doWork() {
@@ -37,17 +47,19 @@ public class NSStreamConsumer<A> : PCConcurrentOperation, NSStreamDelegate {
                 var len = 0
                 
                 while (inputStream.hasBytesAvailable) {
-                    len = inputStream.read(buffer, maxLength: bufferSizeNumber)
+                    len = len + inputStream.read(buffer, maxLength: bufferSizeNumber)
                 }
                 print("receiving bytes \(len)");
                 self.foundElement(NSData(bytes: buffer, length: len))
                 break
+
             case NSStreamEvent.HasSpaceAvailable:
                 print("Has Space Available")
                 break
             case NSStreamEvent.OpenCompleted:
                 print("Open Completed")
                 break
+
             default:
                 print("ErrorOccurred \(eventCode)")
                 finishDoingWork()
